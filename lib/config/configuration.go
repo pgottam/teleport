@@ -1017,7 +1017,7 @@ func Configure(clf *CommandLineFlags, cfg *service.Config) error {
 		// log level right away. Otherwise allow the command line flag to override
 		// logger severity in file configuration.
 		if fileConf == nil {
-			log.SetLevel(log.DebugLevel)
+			cfg.Log.SetLevel(log.DebugLevel)
 		} else {
 			fileConf.Logger.Severity = teleport.DebugLevel
 		}
